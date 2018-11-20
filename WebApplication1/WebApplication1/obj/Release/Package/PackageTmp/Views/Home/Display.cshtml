@@ -1,0 +1,29 @@
+@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model List<NazdaqSearch.Models.NazdaqData>
+
+<div class="information">
+
+    @foreach (var item in Model) {
+        
+        <h1>
+            @item.Title 
+        </h1>
+        
+        <h2> 
+            @item.Symbol 
+        </h2>
+
+        <p> 
+            @item.TimeandDate
+        </p>
+
+        <p>
+            @item.Data
+        </p>
+    }
+
+</div>
