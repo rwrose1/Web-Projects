@@ -1,7 +1,6 @@
 using NazdaqSearch.Logic.HtmlParser;
 using System.Collections.Generic;
 using NazdaqSearch.Models;
-using NazdaqSearch.Logic.NazdaqCSV;
 using System.Web.Mvc;
 
 namespace NazdaqSearch.Controllers
