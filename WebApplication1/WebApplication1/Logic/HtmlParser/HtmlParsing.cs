@@ -15,7 +15,7 @@ namespace NazdaqSearch.Logic.HtmlParser
 			HtmlWeb nazdaqSite = new HtmlWeb();
 			HtmlDocument nazDoc = nazdaqSite.Load("https://www.nasdaq.com/options/");
 			
-			String dt = DateTime.Now.ToString("yyyy-MM-dd HH:mm");
+			String dt = DateTime.Now.ToString("MM/dd/yyyy");
 
 			List<TitleAndLink> toBeReturned = new List<TitleAndLink>();
 

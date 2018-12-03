@@ -3,24 +3,35 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@model NazdaqSearch.Models.Inputodel
+
 <h2> Welcome! </h2>
 
-
-
-<a href="../Home/Display" class="button"> Refresh... </a>
+<a href="../Logic/Refresh" class="button"> Refresh... </a>
 
 
 <div class="search" style="border:solid 5px #4CAF50; width: 400px;">
 
-    <div style="padding: 10px; position: center">
-        <form style="padding: 10px;">
-            <input type="text" placeholder="Search for Symbol..." />
-            <a name="Search by Symbol" href="../Home/Display" class="button"> Search by Symbol </a>
-        </form>
+    @using (Html.BeginForm("SymbolDisplay", "Home", FormMethod.Post))
+    {
+    <form style="padding:10px; position:center;">
 
-        <form style="padding: 10px;">
-            <input type="date" placeholder="Search for Date..." />
-            <a name="Search by Date" href="../Home/Display" class="button"> Search by Date </a>
-        </form>
+        @Html.LabelFor(model => model.SymbolInput, "Symbol Search")
+        @Html.TextBoxFor(model => model.SymbolInput)
+        @* @Html.Hidden("Symbol Input", model.SymbolInput) *@
+
+        <p></p>
+
+        @Html.LabelFor(model => model.DateInput, "Date Search")
+        @Html.TextBoxFor(model => model.DateInput, "{0:yyyy-mm-dd}", new { type = "date" })
+        @* @Html.Hidden("DateInput", model.DateInput) *@
+
+        <p></p>
+
+        <input type="submit" id="submitId" value="Submit" />
+
+    </form>    
+    }
+
+
     </div>
-</div>

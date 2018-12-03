@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using NazdaqSearch.Models;
 using CsvHelper;
 
-namespace NazdaqSearch.Logic.NazdaqCSV 
+namespace NazdaqSearch.Logic.CSVConversions 
 {
 
     class NazdaqCSV
@@ -12,11 +12,15 @@ namespace NazdaqSearch.Logic.NazdaqCSV
 
         public static void dataToCSV(List<NazdaqData> toBeRecorded) 
         {
-            if (toBeRecorded.Count == 0) 
+            String path;
+            if (toBeRecorded == null || toBeRecorded.Count == 0) 
             { 
                 Console.WriteLine("List empty. Stop process");
-            } else 
-            {   
+
+            } else
+
+            {
+
                 using (StreamWriter writer = new StreamWriter("data.csv"))
                 {
                     var csv = new CsvWriter(writer);

@@ -72,3 +72,7 @@ C:\Users\Robert Rose\Documents\GitHub\Web Projects\WebApplication1\WebApplicatio
 C:\Users\Robert Rose\Documents\GitHub\Web Projects\WebApplication1\WebApplication1\obj\Debug\NazdaqSearch.csproj.CopyComplete
 C:\Users\Robert Rose\Documents\GitHub\Web Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
 C:\Users\Robert Rose\Documents\GitHub\Web Projects\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb
+C:\Users\Robert Rose\Documents\GitHub\Web Projects\WebApplication1\WebApplication1\bin\EntityFramework.dll
+C:\Users\Robert Rose\Documents\GitHub\Web Projects\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.dll
+C:\Users\Robert Rose\Documents\GitHub\Web Projects\WebApplication1\WebApplication1\bin\EntityFramework.xml
+C:\Users\Robert Rose\Documents\GitHub\Web Projects\WebApplication1\WebApplication1\bin\EntityFramework.SqlServer.xml
