@@ -12,7 +12,9 @@ namespace NazdaqSearch.Logic.CSVConversions
 
         public static void dataToCSV(List<NazdaqData> toBeRecorded) 
         {
-            String path;
+
+            var path = System.Web.Hosting.HostingEnvironment.MapPath(@"~/Files/data.csv");
+
             if (toBeRecorded == null || toBeRecorded.Count == 0) 
             { 
                 Console.WriteLine("List empty. Stop process");
@@ -21,7 +23,7 @@ namespace NazdaqSearch.Logic.CSVConversions
 
             {
 
-                using (StreamWriter writer = new StreamWriter("data.csv"))
+                using (StreamWriter writer = new StreamWriter(path))
                 {
                     var csv = new CsvWriter(writer);
                     csv.WriteRecords(toBeRecorded);

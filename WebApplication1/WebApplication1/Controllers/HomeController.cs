@@ -33,36 +33,34 @@ namespace NazdaqSearch.Controllers
 
             List<NazdaqData> display = null;
 
-            if (model.SymbolInput == null && model.DateInput != null)
+            String dateString = model.DateInput.ToString("MM/dd/yyyy");
+
+            Debug.WriteLine("\n\n\n" + dateString + "\n\n\n");
+
+            if (model.SymbolInput == null && !dateString.Equals("01/01/0001"))
             {
-
-                String dateString = model.DateInput.ToString("MM/dd/yyyy");
-
-                Debug.WriteLine("\n\n\n" + dateString + "\n\n\n");
-            
-
                 display = SQLHelper.GetAllWithDate(dateString);
             }
-            else if (model.SymbolInput != null && model.DateInput == null)
+            else if (model.SymbolInput != null && dateString.Equals("01/01/0001"))
             {
                 display = SQLHelper.GetAllWithSymbol(model.SymbolInput);
             } else
             {
-                String dateString = model.DateInput.ToString().Substring(0, model.DateInput.ToString().IndexOf(' '));
-
                 display = SQLHelper.CompareData(SQLHelper.GetAllWithSymbol(model.SymbolInput), dateString);
             }
 
+            NazdaqCSV.dataToCSV(display);
 
             return View(display);
 
         }
 
-        public FileResult CsvDownload (List<NazdaqData> model)
+        public FileResult CsvDownload ()
         {
-            NazdaqCSV.dataToCSV(model);
 
-            return File("me.txt", "test/plain", "NazdaqSearch/Files");
+            var path = System.Web.Hosting.HostingEnvironment.MapPath(@"~/Files/data.csv");
+
+            return File(path, "text/csv", "data.csv");
         }
 
     }
